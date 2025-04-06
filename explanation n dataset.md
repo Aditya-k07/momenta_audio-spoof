@@ -9,7 +9,6 @@
 
 **Solutions:**
 - Used `AdaptiveAvgPool2d` for fixed output size
-- Applied an 80-20 train-test split
 - Normalized spectrograms with decibel scaling
 
 **Assumptions:**
@@ -28,7 +27,7 @@
 - Audio → Mel Spectrogram → CNN layers → Adaptive pooling → Dense → Output (Real/Fake)
 
 **Results:**
-- ~94% test accuracy
+- 100 % accuracy due to overfitting
 - Balanced precision and recall for both classes
 
 **Strengths:**
@@ -48,8 +47,11 @@
 
 ### 3. Reflection
 
-1. Biggest challenge: handling input size variability
-2. Real-world performance may drop due to uncontrolled noise
-3. More varied data and pre-trained embeddings would help
-4. For deployment: use Docker + FastAPI, optimize with TorchScript/ONNX
+1. Biggest challenge: handling input size variability.
+2. Real-world performance may drop due to uncontrolled noise.
+3. For specific tye of spoof noise you have to train according to it.
 
+### 3. Datasets
+
+1. For training and validation : https://www.kaggle.com/datasets/kambingbersayaphitam/speech-dataset-of-human-and-ai-generated-voices
+2. For testing :  https://www.kaggle.com/datasets/hejuncheung/songs-data
